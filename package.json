@@ -1,0 +1,30 @@
+{
+  "name": "vuepress-documents",
+  "version": "1.0.1",
+  "description": "personal blog website",
+  "main": "index.js",
+  "repository":"https://github.com/FizzSy/documents.git",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs",
+    "clean": "rimraf ./dist",
+    "deploy": "bash deploy.sh"
+  },
+  "author": "1369530215@qq.com",
+  "license": "ISC",
+  "devDependencies": {
+    "@vuepress/plugin-active-header-links": "^1.2.0",
+    "@vuepress/plugin-back-to-top": "^1.2.0",
+    "@vuepress/plugin-medium-zoom": "^1.2.0",
+    "node-sass": "^4.13.0",
+    "rimraf": "^3.0.0",
+    "sass-loader": "^8.0.0",
+    "vuepress": "^1.2.0",
+    "vuepress-plugin-baidu-autopush": "^1.0.1",
+    "vuepress-plugin-code-copy": "^1.0.4",
+    "vuepress-plugin-smooth-scroll": "0.0.9"
+  },
+  "dependencies": {
+    "vuepress-plugin-comment": "^0.7.2"
+  }
+}

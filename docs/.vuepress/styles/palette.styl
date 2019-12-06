@@ -1,0 +1,63 @@
+// colors
+$accentColor = #409eff;
+// $contentWidth = 800px
+#vuepress-valine{
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 2rem 2.5rem;
+    .vat{
+        color:$accentColor;
+    }
+    .vlist .vcard .vhead .vnick:hover {
+    color: $accentColor;;
+    }
+}
+
+.message-page {
+    .theme-default-content{
+        max-width: 820px;
+    }
+}
+
+::-webkit-scrollbar-thumb {
+    position: relative;
+    display: block;
+    width: 6px;
+    height: 0;
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: rgba(144, 147, 153, 0.3);
+    transition: background-color 0.3s;
+    background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #a8a8a8;
+}
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background-color: #fff;
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track {
+    border: none;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb {
+    background-clip: padding-box;
+    position: relative;
+    display: block;
+    width: 6px;
+    height: 6px;
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: rgba(144, 147, 153, 0.6);
+    transition: background-color 0.3s;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #a8a8a8;
+}
