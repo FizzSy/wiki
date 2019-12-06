@@ -5,9 +5,8 @@ set -e
 
 git init
 git add -A
-git commit -m 'deploy'
+git commit -m 'deploys'
 
-# 如果发布到 https://USERNAME.github.io/<REPO>  REPO=github上的项目
-git push -f git@github.com:FizzSy/documents.git master:gh-pages
+git push -f git@github.com:FizzSy/FizzSy.github.io.git master
 
 cd -
