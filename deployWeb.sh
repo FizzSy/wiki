@@ -17,6 +17,6 @@ git add -A
 git commit -m 'deploy'
 
 # 如果你想要部署到 https://USERNAME.github.io
-git push -f git@github.com:FizzSy/luyuwen.github.io.git master
+git push -f git@github.com:FizzSy/FizzSy.github.io.git master
 
 cd -
