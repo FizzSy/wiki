@@ -8,7 +8,8 @@
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
     "clean": "rimraf ./dist",
-    "deploy": "bash deploy.sh"
+    "deploy:web": "bash deployWeb.sh",
+    "deploy:code": "bash deployCode.sh"
   },
   "author": "1369530215@qq.com",
   "license": "ISC",

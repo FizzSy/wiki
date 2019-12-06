@@ -19,7 +19,4 @@ git commit -m 'deploy'
 # 如果你想要部署到 https://USERNAME.github.io
 git push -f git@github.com:FizzSy/luyuwen.github.io.git master
 
-# 如果发布到 https://USERNAME.github.io/<REPO>  REPO=github上的项目
-# git push git@github.com:FizzSy/documents.git master:gh-pages
-
 cd -
