@@ -7,6 +7,6 @@ git init
 git add -A
 git commit -m 'deploys'
 
-git push -f git@github.com:FizzSy/FizzSy.github.io.git master
+git push -f git@github.com:FizzSy/documents.git master
 
 cd -
