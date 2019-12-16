@@ -68,10 +68,6 @@ module.exports = {
             {
                 text: '留言',
                 link: '/message/'
-            },
-            {
-                text: 'GitHub',
-                link: 'https://github.com/FizzSy'
             }
         ],
         sidebarDepth: 1,
