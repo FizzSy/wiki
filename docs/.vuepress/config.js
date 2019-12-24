@@ -81,6 +81,9 @@ module.exports = {
                         'markdown',
                         'sass',
                         'git',
+                        'Nuxt.js',
+                        'uni-app',
+                        'wepy',
                         'other'
                     ]
                 }
