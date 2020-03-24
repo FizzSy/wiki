@@ -6,7 +6,7 @@ layout: home
 description: "WEB前端开发,前端开发博客专注于前端开发,分享前端开发资源和前端开发技术资讯等,luyuwen"
 keywords: "前端开发,前端博客,前端技术,luyuwen"
 avatar: /profile.jpg
-head: "luyuwen"
+head: "卢毓文"
 info: "前端开发工程师"
 interests: "摄影、看剧、代码"
 socials:
@@ -26,6 +26,6 @@ actions:
   # - text: CV
   #   link: /article/
   - text: "启程"
-    link: /message/
+    link: /documents/
 footer: Made by luyuwen | Powered by VuePress
 ---

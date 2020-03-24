@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-    title: "卢毓文的个人博客",
+    title: "luyuwen",
     port: '3000',
     base: "/",
     dest: "./dist",
@@ -9,7 +9,7 @@ module.exports = {
     head: [
         ["link", {
             rel: "icon",
-            href: "/logo.png"
+            href: "/profile.jpg"
         }],
         ["meta", {
             name: "author",
@@ -37,7 +37,9 @@ module.exports = {
     },
     markdown: {
         lineNumbers: true,
-        anchor: { permalink: true },
+        anchor: {
+            permalink: true
+        },
         config: md => {
             md.set({
                 breaks: true
@@ -49,10 +51,10 @@ module.exports = {
         }
     },
     themeConfig: {
-        repo: 'https://github.com/FizzSy/documents.git',
+        repo: 'https://github.com/FizzSy/wiki.git',
         repoLabel: 'GitHub',
         displayAllHeaders: true,
-        logo: "/logo.png",
+        //logo: "/logo.png",
         nav: [{
                 text: '首页',
                 link: '/'
@@ -71,23 +73,21 @@ module.exports = {
             }
         ],
         sidebarDepth: 1,
-        sidebar:{
-            '/documents/':[
-                {
-                    title:'文档',
-                    collapsable: false,
-                    children:[
-                        '',
-                        'markdown',
-                        'sass',
-                        'git',
-                        'Nuxt.js',
-                        'uni-app',
-                        'wepy',
-                        'other'
-                    ]
-                }
-            ]
+        sidebar: {
+            '/documents/': [{
+                title: '文档',
+                collapsable: false,
+                children: [
+                    '',
+                    'markdown',
+                    'sass',
+                    'git',
+                    'Nuxt.js',
+                    'uni-app',
+                    'wepy',
+                    'other'
+                ]
+            }]
         },
         lastUpdated: '上一次更新时间：',
         smoothScroll: true
