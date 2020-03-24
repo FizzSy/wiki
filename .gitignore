@@ -6,7 +6,8 @@ km-master
 # local env files
 .env.local
 .env.*.local
-
+delopyCode.sh
+deployWeb.sh
 # Log files
 npm-debug.log*
 yarn-debug.log*
