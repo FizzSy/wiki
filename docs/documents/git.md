@@ -1,10 +1,11 @@
 ---
-comment : false
+comment: false
 ---
 
-# git 
+# git
 
 ## 常用命令
+
 ```
 git clone                                               // 将存储库克隆到新目录中
 git init                                                // 初始化一个空的git本地仓库
@@ -34,12 +35,14 @@ export no_proxy=github.com                              // 取消对github.com�
 ```
 
 ## Git 全局设置
+
 ```
 git config --global user.name  "luyuwen"
 git config --global user.email "1369530215@qq.com"
 ```
 
 ## 创建一个新仓库
+
 ```
 git clone https://github.com/FizzSy/documents.git
 cd documents
@@ -49,19 +52,20 @@ git commit -m "add README"
 git push -u origin master
 ```
 
-
 ## 已存在文件夹或仓库
-::: tip 将本地仓库和github仓库关联起来
+
+::: tip 将本地仓库和 github 仓库关联起来
 git remote add origin https://github.com/FizzSy/documents.git 这里的网址就是仓库的网址  
-第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令 如：git push origin master
+第一次推送 master 分支时，加上了-u 参数，Git 不但会把本地的 master 分支内容推送的远程新的 master 分支，还会把本地的 master 分支和远程的 master 分支关联起来，在以后的推送或者拉取时就可以简化命令 如：git push origin master
 :::
+
 ```
 cd existing_folder
 git init
 git remote add origin https://github.com/FizzSy/documents.git
 git add .
 git commit -m "init"
-git push -u origin master           
+git push -u origin master
 ```
 
 ## 解决分支冲突
@@ -71,33 +75,40 @@ git push -u origin master
 git pull
 git commit -m 'update'  //dev分支提交修改文件
 git push origin dev
-git checkout master     
+git checkout master
 git merge dev        //将dev分支代码合并到master
 修改完冲突
-git commit -m 'merge'   
-git push origin master     
+git commit -m 'merge'
+git push origin master
 ```
 
 ## 修改上传限制
- ```
+
+```
 git config --global http.postBuffer 157286400（代表设置上传上限大小为150M）
- ```
-
-
-
+```
 
 ## 修改远程仓库地址
+
 方法有三种：
 
 1、修改命令
+
 ```
 git remote set-url origin [url]
 ```
 
 2、先删后加
+
 ```
 git remote rm origin
 git remote add origin [url]
 ```
 
-3、直接修改config文件
+3、直接修改 config 文件
+
+## 代码回滚
+
+```
+git reset --hard [ID] //先通过 git log 查看提交版本 ID
+```

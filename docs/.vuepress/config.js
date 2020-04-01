@@ -5,7 +5,7 @@ module.exports = {
     port: '3000',
     base: "/",
     dest: "./dist",
-    description: "一个兴趣使然的个人markdown博客",
+    description: "一个兴趣使然的个人技术博客",
     head: [
         ["link", {
             rel: "icon",
@@ -17,7 +17,7 @@ module.exports = {
         }],
         ["meta", {
             name: "keywords",
-            content: "一个兴趣使然的个人markdown博客"
+            content: "一个兴趣使然的个人技术博客"
         }],
         ["meta", {
             name: "apple-mobile-web-app-capable",
@@ -79,12 +79,15 @@ module.exports = {
                 collapsable: false,
                 children: [
                     '',
-                    'markdown',
-                    'sass',
                     'git',
+                    'markdown',
                     'Nuxt.js',
+                    'linux',
+                    'jenkins',
+                    'nginx',
                     'uni-app',
                     'wepy',
+                    'sass',
                     'other'
                 ]
             }]

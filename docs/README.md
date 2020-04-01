@@ -8,7 +8,7 @@ keywords: "前端开发,前端博客,前端技术,luyuwen"
 avatar: /profile.jpg
 head: "卢毓文"
 info: "前端开发工程师"
-interests: "摄影、看剧、代码"
+interests: "旅游摄影、看剧、编程"
 socials:
   - title: github
     link: https://github.com/FizzSy
