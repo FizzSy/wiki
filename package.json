@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "description": "personal blog website",
   "main": "index.js",
-  "repository":"https://github.com/FizzSy/documents.git",
+  "repository": "https://github.com/FizzSy/documents.git",
   "scripts": {
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
@@ -20,7 +20,7 @@
     "node-sass": "^4.13.0",
     "rimraf": "^3.0.0",
     "sass-loader": "^8.0.0",
-    "vuepress": "^1.2.0", 
+    "vuepress": "^1.2.0",
     "vuepress-plugin-baidu-autopush": "^1.0.1",
     "vuepress-plugin-code-copy": "^1.0.4",
     "vuepress-plugin-smooth-scroll": "0.0.9"
