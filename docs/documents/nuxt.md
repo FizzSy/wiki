@@ -1,13 +1,13 @@
 ---
-comment : false
+comment: false
 ---
 
-# Nuxt
+# Nuxt 服务端渲染
 
 ::: tip 介绍
 Nuxt.js 是一个基于 Vue.js 的通用应用框架。
 
-通过对客户端/服务端基础架构的抽象组织，Nuxt.js 主要关注的是应用的 UI渲染。
+通过对客户端/服务端基础架构的抽象组织，Nuxt.js 主要关注的是应用的 UI 渲染。
 
 我们的目标是创建一个灵活的应用框架，你可以基于它初始化新项目的基础结构代码，或者在已有 Node.js 项目中使用 Nuxt.js。
 
@@ -24,12 +24,11 @@ Nuxt.js 预设了利用 Vue.js 开发服务端渲染的应用所需要的各种�
 
 ### 上手模板
 
-
 ```
-npx create-nuxt-app <项目名>    
+npx create-nuxt-app <项目名>
 ```
 
-### 从零建Nuxt项目
+### 从零建 Nuxt 项目
 
 ```
 mkdir <项目名>
@@ -98,7 +97,7 @@ Nuxt.js 允许你在自动生成的 vendor.bundle.js 文件中添加一些模块
 
 ### head
 
-该配置项用于配置应用默认的meta标签。
+该配置项用于配置应用默认的 meta 标签。
 
 ### loading
 
@@ -106,15 +105,15 @@ Nuxt.js 允许你在自动生成的 vendor.bundle.js 文件中添加一些模块
 
 ### modules
 
-该配置项允许您将Nuxt模块添加到项目中。
+该配置项允许您将 Nuxt 模块添加到项目中。
 
 ### modulesDir
 
-该配置项允许您定义Nuxt.js应用程序的node_modules文件夹。
+该配置项允许您定义 Nuxt.js 应用程序的 node_modules 文件夹。
 
 ### plugins
 
-该配置项用于配置那些需要在 根vue.js应用 实例化之前需要运行的 Javascript 插件。
+该配置项用于配置那些需要在 根 vue.js 应用 实例化之前需要运行的 Javascript 插件。
 
 ### rootDir
 
@@ -129,18 +128,20 @@ Nuxt.js 允许你在自动生成的 vendor.bundle.js 文件中添加一些模块
 ::: tip 提示
 要在页面之间使用路由，建议使用`<nuxt-link>`标签。
 例如：
+
 ```
 <template>
   <nuxt-link to="/">首页</nuxt-link>
 </template>
 ```
+
 :::
 
 ### 基础路由
 
 假设 pages 的目录结构如下：
 
-``` js
+```js
 pages/
 --| user/
 -----| index.vue
@@ -150,25 +151,25 @@ pages/
 
 那么，Nuxt.js 自动生成的路由配置如下：
 
-``` js
+```js
 router: {
-  routes: [
-    {
-      name: 'index',
-      path: '/',
-      component: 'pages/index.vue'
-    },
-    {
-      name: 'user',
-      path: '/user',
-      component: 'pages/user/index.vue'
-    },
-    {
-      name: 'user-one',
-      path: '/user/one',
-      component: 'pages/user/one.vue'
-    }
-  ]
+	routes: [
+		{
+			name: "index",
+			path: "/",
+			component: "pages/index.vue"
+		},
+		{
+			name: "user",
+			path: "/user",
+			component: "pages/user/index.vue"
+		},
+		{
+			name: "user-one",
+			path: "/user/one",
+			component: "pages/user/one.vue"
+		}
+	];
 }
 ```
 
@@ -176,10 +177,9 @@ router: {
 
 在 Nuxt.js 里面定义带参数的动态路由，需要创建对应的以下划线作为前缀的 Vue 文件 或 目录
 
-
 目录结构：
 
-``` js
+```js
 pages/
 --| _slug/
 -----| comments.vue
@@ -191,39 +191,39 @@ pages/
 
 Nuxt.js 生成对应的路由配置表为：
 
-``` js 
+```js
 router: {
-  routes: [
-    {
-      name: 'index',
-      path: '/',
-      component: 'pages/index.vue'
-    },
-    {
-      name: 'users-id',
-      path: '/users/:id?',
-      component: 'pages/users/_id.vue'
-    },
-    {
-      name: 'slug',
-      path: '/:slug',
-      component: 'pages/_slug/index.vue'
-    },
-    {
-      name: 'slug-comments',
-      path: '/:slug/comments',
-      component: 'pages/_slug/comments.vue'
-    }
-  ]
+	routes: [
+		{
+			name: "index",
+			path: "/",
+			component: "pages/index.vue"
+		},
+		{
+			name: "users-id",
+			path: "/users/:id?",
+			component: "pages/users/_id.vue"
+		},
+		{
+			name: "slug",
+			path: "/:slug",
+			component: "pages/_slug/index.vue"
+		},
+		{
+			name: "slug-comments",
+			path: "/:slug/comments",
+			component: "pages/_slug/comments.vue"
+		}
+	];
 }
 ```
 
 ### 路由参数校验
 
 Nuxt.js 可以让你在动态路由组件中定义参数校验方法。  
-举个例子： pages/users/_id.vue
+举个例子： pages/users/\_id.vue
 
-``` js
+```js
 export default {
   validate ({ params }) {
     // 必须是number类型
@@ -236,7 +236,7 @@ Nuxt.js 将自动加载显示 404 错误页面或 500 错误页面。
 ```
 
 ::: tip 提示
-若要查看具体路由可查看.nuxt文件夹下的router.js
+若要查看具体路由可查看.nuxt 文件夹下的 router.js
 :::
 
 ## 异步数据
@@ -245,44 +245,44 @@ Nuxt.js 扩展了 Vue.js，增加了一个叫 asyncData 的方法，使得我们
 
 ### asyncData 方法
 
-asyncData方法会在组件（限于页面组件）每次加载之前被调用。它可以在服务端或路由更新之前被调用。 在这个方法被调用的时候，第一个参数被设定为当前页面的上下文对象，你可以利用 asyncData方法来获取数据，Nuxt.js 会将 asyncData 返回的数据融合组件 data 方法返回的数据一并返回给当前组件
+asyncData 方法会在组件（限于页面组件）每次加载之前被调用。它可以在服务端或路由更新之前被调用。 在这个方法被调用的时候，第一个参数被设定为当前页面的上下文对象，你可以利用 asyncData 方法来获取数据，Nuxt.js 会将 asyncData 返回的数据融合组件 data 方法返回的数据一并返回给当前组件
 
 ::: warning 注意
-由于asyncData方法是在组件 初始化 前被调用的，所以在方法内是没有办法通过 this 来引用组件的实例对象
+由于 asyncData 方法是在组件 初始化 前被调用的，所以在方法内是没有办法通过 this 来引用组件的实例对象
 :::
 
-``` js
+```js
 export default {
-  async asyncData ({ params }) {
-    const { data } = await axios.get(`https://my-api/posts/${params.id}`)
-    return { title: data.title }
-  }
-}
+	async asyncData({ params }) {
+		const { data } = await axios.get(`https://my-api/posts/${params.id}`);
+		return { title: data.title };
+	}
+};
 ```
 
 ### 上下文对象
 
-在服务器端调用asyncData时，您可以访问用户请求的req和res对象。
+在服务器端调用 asyncData 时，您可以访问用户请求的 req 和 res 对象。
 
-``` js
+```js
 export default {
-  async asyncData ({ req, res }) {
-    // 请检查您是否在服务器端
-    // 使用 req 和 res
-    if (process.server) {
-      return { host: req.headers.host }
-    }
+	async asyncData({ req, res }) {
+		// 请检查您是否在服务器端
+		// 使用 req 和 res
+		if (process.server) {
+			return { host: req.headers.host };
+		}
 
-    return {}
-  }
-}
+		return {};
+	}
+};
 ```
 
 ### fetch 方法
 
 如果页面组件设置了 fetch 方法，它会在组件每次加载前被调用（在服务端或切换至目标路由之前）
 
-``` js 
+```js
 <template>
   <h1>Stars: {{ $store.state.stars }}</h1>
 </template>
@@ -297,14 +297,14 @@ export default {
 ```
 
 ::: tip 总结
-asyncData用于服务端渲染，fetch用于异步调用vuex
+asyncData 用于服务端渲染，fetch 用于异步调用 vuex
 :::
 
 ## 中间件
 
 在应用中的特定页面设置中间件
 
-``` js
+```js
 pages/secret.vue：
 
 <template>
@@ -333,7 +333,7 @@ plugins 属性配置的所有插件会在 Nuxt.js 应用初始化之前被加载
 
 每次你需要使用 Vue.use() 时，你需要在 plugins/ 目录下创建相应的插件文件，并在 nuxt.config.js 中的 plugins 配置项中配置插件的路径。
 
-``` js 
+```js
 nuxt.config.js：
 
 module.exports = {

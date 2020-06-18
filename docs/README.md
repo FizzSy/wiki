@@ -10,8 +10,8 @@ head: "卢毓文"
 info: "前端开发工程师"
 interests: "旅游摄影、看剧、编程"
 socials:
-  - title: github
-    link: https://github.com/FizzSy
+    - title: github
+      link: https://github.com/FizzSy
 # - title: linkedin
 #   link: https://www.linkedin.com
 # - title: instagram
@@ -19,13 +19,14 @@ socials:
 # - title: email
 #   link: 'mailto:harry[at]gmail.com'
 actions:
-  # - text: Projects
-  #   link: /projects/
-  # - text: Blog
-  #   link: https://github.com/maozongmin
-  # - text: CV
-  #   link: /article/
-  - text: "启程"
-    link: /documents/
+    # - text: Projects
+    #   link: /projects/
+    # - text: Blog
+    #   link: https://github.com/maozongmin
+    #https://km.yxstudio.cn/
+    # - text: CV
+    #   link: /article/
+    - text: "启程"
+      link: /documents/
 footer: Made by luyuwen | Powered by VuePress
 ---
