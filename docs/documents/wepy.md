@@ -1,10 +1,10 @@
 ---
-comment : false
+comment: false
 ---
 
-# Wepy 
+# Wepy
 
-## 搭建项目
+## 1、搭建项目
 
 ```
 npm install wepy-cli -g
@@ -14,11 +14,11 @@ npm  install
 wepy build --watch
 ```
 
-## 目录结构
+## 2、目录结构
 
 ```
 ├── dist                   小程序运行代码目录（该目录由WePY的build指令自动编译生成，请不要直接修改该目录下的文件）
-├── node_modules           
+├── node_modules
 ├── src                    代码编写的目录（该目录为使用WePY后的开发目录）
 |   ├── components         WePY组件目录（组件不属于完整页面，仅供完整页面或其他组件引用）
 |   |   ├── com_a.wpy      可复用的WePY组件a
@@ -31,14 +31,14 @@ wepy build --watch
 ```
 
 ::: tip 建议
-wepy继承了wx对象的方法，建议在wepy框架开发中不要用到wx对象的方法，虽然运行时效果是一样，但是打包时会cli报错（wepy中没有wx对象）
+wepy 继承了 wx 对象的方法，建议在 wepy 框架开发中不要用到 wx 对象的方法，虽然运行时效果是一样，但是打包时会 cli 报错（wepy 中没有 wx 对象）
 :::
 
-## methods, events
+## 3、methods, events
 
-在vue中，所有方法都定义在methods里面。而在wepy中，普通方法是直接定义在class类方法里面。events只定义组件间交互的方法。methods只定义事件方法。
+在 vue 中，所有方法都定义在 methods 里面。而在 wepy 中，普通方法是直接定义在 class 类方法里面。events 只定义组件间交互的方法。methods 只定义事件方法。
 
-``` js
+```js
 # index.wpy
 getSliderImg (data) { // 普通方法
   this.sliderImg = data.slice(0, 10)
@@ -67,9 +67,9 @@ methods = {
 }
 ```
 
-## 事件传值
+## 4、事件传值
 
-``` js
+```js
 # template
 <view data-movie="{{movie}}" @tap="showMovie"></view>
 
@@ -81,23 +81,23 @@ methods = {
 }
 ```
 
-## 组件传值
+## 5、组件传值
 
-``` js 
+```js
 <child :data.sync="data"></child> // 动态绑定数据需要sync修饰符
 ```
 
-## 动态绑定class
+## 6、动态绑定 class
 
-``` js
+```js
 <view class="class-a {{true ? 'class-b' : 'class-c'}}">
 ```
 
-## 循环渲染组件
+## 7、循环渲染组件
 
-wepy的循环渲染组件，必须使用 <repeat/>标签，或者微信官方的<block/>标签(这两个标签不会渲染到视图层）否则就不会渲染成功
+wepy 的循环渲染组件，必须使用 <repeat/>标签，或者微信官方的<block/>标签(这两个标签不会渲染到视图层）否则就不会渲染成功
 
-``` js
+```js
 # wepy 提供的repeat组件
 <view class="movie" wx:if="{{movies}}">
   <repeat for="{{movies}}" key="index" index="index" item="item">
@@ -106,13 +106,13 @@ wepy的循环渲染组件，必须使用 <repeat/>标签，或者微信官方的
 </view>
 ```
 
-## globalData
+## 8、globalData
 
-``` js
-this.$parent.globalDta.prop
+```js
+this.$parent.globalDta.prop;
 ```
 
-## 版本
+## 9、版本
 
 ```
 目前全局安装wepy脚手架是下载最新版本的wepy(2.0)，但是该版本的wepy在运行项目热更新
@@ -130,5 +130,5 @@ npm install -g wepy-cli@1.7.2
 ```
 
 ::: warning 注意
-全局安装 CLI 会覆盖老版本的 CLI 工具，新版本的 CLI 无法编译老版本的代码。因此，如果需要同时维护 WePY 1.7.x 和 WePY 2.0.x 的开发者，应当考虑在当前项目安装 CLI，而非全局安装。可以直接使用 1.7.x 的 CLI 去初始化 2.0.x 的项目，如下：$ wepy init standard#2.0.x myproj
+全局安装 CLI 会覆盖老版本的 CLI 工具，新版本的 CLI 无法编译老版本的代码。因此，如果需要同时维护 WePY 1.7.x 和 WePY 2.0.x 的开发者，应当考虑在当前项目安装 CLI，而非全局安装。可以直接使用 1.7.x 的 CLI 去初始化 2.0.x 的项目，如下：\$ wepy init standard#2.0.x myproj
 :::

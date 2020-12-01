@@ -10,7 +10,7 @@ Nginx("engine x")是一款是由俄罗斯的程序设计师 Igor Sysoev 所开�
 在高连接并发的情况下，Nginx 是 Apache 服务器不错的替代品。
 :::
 
-## 常用命令
+## 1、常用命令
 
 ```
 start nginx             // 启动
@@ -27,19 +27,19 @@ service nginx start     // 启动
 service nginx restart   // 重启
 ```
 
-## nginx 无法重启解决方案
+## 2、nginx 无法重启解决方案
 
 ```
 snginx -c /usr/local/etc/nginx/nginx.conf
 ```
 
-## 403 Forbidden
+## 3、403 Forbidden
 
 ```
 autoindex off       //鉴于安全考虑，建议关闭当前页面目录结构
 ```
 
-## 反向代理
+## 4、反向代理
 
 ::: tip
 路由访问 80 端口但实际会访问 8080 端口
@@ -56,7 +56,7 @@ server {
 }
 ```
 
-## 配置 https 协议
+## 5、配置 https 协议
 
 在云上下载 https 协议证书
 
@@ -81,13 +81,13 @@ server {
 }
 ```
 
-## 配置 http 跳 https
+## 6、配置 http 跳 https
 
 ```
 rewrite ^(.*) https://$server_name$1 permanent;
 ```
 
-## vue history 模式下刷新 404
+## 7、vue history 模式下刷新 404
 
 ```
 location / {
@@ -96,7 +96,7 @@ location / {
 }
 ```
 
-## 二级目录反向代理
+## 8、二级目录反向代理
 
 [Nginx 通过二级目录（路径）映射不同的反向代理，规避 IP+端口访问](https://zhang.ge/5054.html "Nginx 通过二级目录（路径）映射不同的反向代理，规避 IP+端口访问")
 

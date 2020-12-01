@@ -1,74 +1,66 @@
 <template>
-  <div class="home">
-    <Navbar />
-    <div class="wrapper">
-      <div class="avatar">
-        <img :src="$withBase(data.avatar)" alt="" />
-      </div>
-      <div class="card">
-        <div class="bio">
-          <div class="head">
-            <span>
-              {{ data.head }}
-            </span>
-          </div>
-          <div class="info">
-            <span>
-              {{ data.info }}
-            </span>
-          </div>
-          <div class="description">
-            <Content />
-          </div>
-        </div>
-        <div class="interests">
-          <span>
-            {{ data.interests }}
-          </span>
-        </div>
-        <div class="socials">
-          <div v-for="item in data.socials">
-            <a :href="item.link" target="_blank">
-              <img
-                :src="'/icons/' + item.title + '.svg'"
-                :alt="item.title"
-                :title="item.title"
-              />
-            </a>
-          </div>
-        </div>
-        <div class="actions">
-          <div v-for="item in data.actions">
-            <a
-              :href="item.link"
-              class="button"
-              :target="item.link.startsWith('/') ? '' : '_blank'"
-            >
-              {{ item.text }}
-            </a>
-          </div>
-        </div>
-      </div>
+    <div class="home">
+        <Navbar />
+        <div class="wrapper">
+            <div class="avatar">
+                <img :src="$withBase(data.avatar)" alt="" />
+            </div>
+            <div class="card">
+                <div class="bio">
+                    <div class="head">
+                        <span>
+                            {{ data.head }}
+                        </span>
+                    </div>
+                    <div class="info">
+                        <span>
+                            {{ data.info }}
+                        </span>
+                    </div>
+                    <div class="description">
+                        <Content />
+                    </div>
+                </div>
+                <div class="interests">
+                    <span>
+                        {{ data.interests }}
+                    </span>
+                </div>
+                <div class="socials">
+                    <div v-for="item in data.socials">
+                        <a :href="item.link" target="_blank">
+                            <img :src="'/icons/' + item.title + '.svg'" :alt="item.title" :title="item.title" />
+                        </a>
+                    </div>
+                </div>
+                <div class="actions">
+                    <div v-for="item in data.actions">
+                        <a :href="item.link" class="button" :target="item.link.startsWith('/') ? '' : '_blank'">
+                            {{ item.text }}
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-      <div class="footer" v-if="data.footer">
-        {{ data.footer }}
-      </div>
+            <div class="footer" v-if="data.footer">
+                {{ data.footer }}
+            </div>
+        </div>
     </div>
-  </div>
 </template>
 
 <script>
 import Navbar from "@vuepress/theme-default/components/Navbar.vue";
 export default {
-  components: { Navbar },
-  computed: {
-    data() {
-      return this.$page.frontmatter;
+    components: { Navbar },
+    computed: {
+        data() {
+            return this.$page.frontmatter;
+        }
+    },
+    mounted() {
+        console.log(this.$site);
     }
-  },
-  mounted() {
-    console.log(this.$site);
-  }
 };
 </script>
 
@@ -202,7 +194,7 @@ body {
                 cursor: pointer;
 
                 &:hover {
-                    background-color: $btnHvColor;
+                    opacity: 0.5;
                 }
             }
         }

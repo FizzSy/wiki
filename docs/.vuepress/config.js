@@ -1,7 +1,7 @@
 const path = require("path");
 
 module.exports = {
-    title: "luyuwen",
+    title: "卢毓文的个人学习博客",
     port: "3000",
     base: "/",
     dest: "./wiki",
@@ -25,7 +25,7 @@ module.exports = {
             "meta",
             {
                 name: "keywords",
-                content: "一个兴趣使然的个人技术博客"
+                content: "卢毓文的个人学习博客，一个兴趣使然的个人技术博客"
             }
         ],
         [
@@ -106,6 +106,7 @@ module.exports = {
                     "prerender",
                     "nuxt",
                     "typescript",
+                    "npm",
                     "uni-app",
                     "wepy",
                     "jenkins",

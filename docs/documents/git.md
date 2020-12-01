@@ -4,7 +4,7 @@ comment: false
 
 # git
 
-## 常用命令
+## 1、常用命令
 
 ```
 git clone                                               // 将存储库克隆到新目录中
@@ -34,14 +34,14 @@ git config --global --unset https.proxy                 // 取消https代理
 export no_proxy=github.com                              // 取消对github.com代理
 ```
 
-## Git 全局设置
+## 2、Git 全局设置
 
 ```
 git config --global user.name  "luyuwen"
 git config --global user.email "1369530215@qq.com"
 ```
 
-## 创建一个新仓库
+## 3、创建一个新仓库
 
 ```
 git clone https://github.com/FizzSy/documents.git
@@ -52,7 +52,7 @@ git commit -m "add README"
 git push -u origin master
 ```
 
-## 已存在文件夹或仓库
+## 4、已存在文件夹或仓库
 
 ::: tip 将本地仓库和 github 仓库关联起来
 git remote add origin https://github.com/FizzSy/documents.git 这里的网址就是仓库的网址  
@@ -68,7 +68,7 @@ git commit -m "init"
 git push -u origin master
 ```
 
-## 解决分支冲突
+## 5、解决分支冲突
 
 ```
 //如本地dev分支合并到master分支有冲突
@@ -82,13 +82,13 @@ git commit -m 'merge'
 git push origin master
 ```
 
-## 修改上传限制
+## 6、修改上传限制
 
 ```
 git config --global http.postBuffer 157286400（代表设置上传上限大小为150M）
 ```
 
-## 修改远程仓库地址
+## 7、修改远程仓库地址
 
 方法有三种：
 
@@ -107,7 +107,7 @@ git remote add origin [url]
 
 3、直接修改 config 文件
 
-## 代码回滚
+## 8、代码回滚
 
 ```
 git reset --hard [ID] //先通过 git log 查看提交版本 ID

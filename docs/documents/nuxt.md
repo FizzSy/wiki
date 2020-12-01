@@ -20,7 +20,7 @@ Nuxt.js 预设了利用 Vue.js 开发服务端渲染的应用所需要的各种�
 作为框架，Nuxt.js 为 客户端/服务端 这种典型的应用架构模式提供了许多有用的特性，例如异步数据加载、中间件支持、布局支持等。
 :::
 
-## 安装
+## 1、安装
 
 ### 上手模板
 
@@ -53,7 +53,7 @@ npm install --save nuxt
 npm run dev
 ```
 
-## 目录结构
+## 2、目录结构
 
 ```
 .nuxt                Nuxt自动生成，临时的用于编辑的文件，build
@@ -73,7 +73,7 @@ package-lock.json    npm自动生成，用于帮助package的统一设置的，y
 package.json         npm 包管理配置文件
 ```
 
-## 配置
+## 3、配置
 
 ### build
 
@@ -123,7 +123,7 @@ Nuxt.js 允许你在自动生成的 vendor.bundle.js 文件中添加一些模块
 
 该配置项可用于覆盖 Nuxt.js 默认的 vue-router 配置。
 
-## 路由
+## 4、路由
 
 ::: tip 提示
 要在页面之间使用路由，建议使用`<nuxt-link>`标签。
@@ -239,7 +239,7 @@ Nuxt.js 将自动加载显示 404 错误页面或 500 错误页面。
 若要查看具体路由可查看.nuxt 文件夹下的 router.js
 :::
 
-## 异步数据
+## 5、异步数据
 
 Nuxt.js 扩展了 Vue.js，增加了一个叫 asyncData 的方法，使得我们可以在设置组件的数据之前能异步获取或处理数据。
 
@@ -300,7 +300,7 @@ export default {
 asyncData 用于服务端渲染，fetch 用于异步调用 vuex
 :::
 
-## 中间件
+## 6、中间件
 
 在应用中的特定页面设置中间件
 

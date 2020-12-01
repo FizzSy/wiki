@@ -4,7 +4,7 @@ comment: false
 
 # Linux
 
-## 常用命令
+## 1、常用命令
 
 ```
 cd [dir]                    //进入目录
@@ -18,7 +18,7 @@ mv [doc] [url/doc]          //重命名文件
 mv [doc] [url]              //移动文件
 ```
 
-## VIM 基本操作
+## 2、VIM 基本操作
 
 ```
 vi/vim [doc]                //启动vi/vim，进入命令模式
@@ -32,20 +32,20 @@ ESC                         //返回基本命令模式
 ctrl+v                      //进入可视化模式  I插入 d删除
 ```
 
-## 解压压缩文件
+## 3、解压压缩文件
 
 ```
 yum install xxx.tar.gz
 tar -zxvf xxx.tar.gz
 ```
 
-## 设置系统快捷软连接
+## 4、设置系统快捷软连接
 
 ```
 ln -s /usr/local/nginx/sbin/nginx nginx     //讲sbin文件下的niginx命令设置为nginx即可启动
 ```
 
-## 设置环境变量 (以 node.js 为例)
+## 5、设置环境变量 (以 node.js 为例)
 
 1、编辑环境变量文件
 

@@ -9,7 +9,7 @@ comment: false
 本质上，webpack 是一个现代 JavaScript 应用程序的静态模块打包器(module bundler)。当 webpack 处理应用程序时，它会递归地构建一个依赖关系图(dependency graph)，其中包含应用程序需要的每个模块，然后将所有这些模块打包成一个或多个 bundle。在 webpack 中，一切都是模块。
 :::
 
-## 什么是 webpack，为什么要使用它？
+## 1、什么是 webpack，为什么要使用它？
 
 现今的很多网页其实可以看做是功能丰富的应用，它们拥有着复杂的 JavaScript 代码和一大堆依赖包。为了简化开发的复杂度，前端社区涌现出了很多好的实践方法
 
@@ -25,7 +25,7 @@ comment: false
 
 -   ...
 
-## 安装
+## 2、安装
 
 ```js
 //全局安装
@@ -34,7 +34,7 @@ npm install -g webpack
 npm install --save-dev webpack
 ```
 
-## 打包
+## 3、打包
 
 ```js
 //默认会打包当前目录下的 webpack.config.文件
@@ -44,7 +44,7 @@ webpack
 webpack --config ./build/webpack.config.js
 ```
 
-## 配置
+## 4、配置
 
 1、入口、输出
 
@@ -207,7 +207,7 @@ webpack.HotModuleReplacementPlugin();
 5、分包
 
 ::: tip splitChunks
-取被重复引入的文件，单独生成一个或多个文件，这样避免在多入口重复打包文件
+提取被重复引入的文件，单独生成一个或多个文件，这样避免在多入口重复打包文件
 :::
 
 ```js

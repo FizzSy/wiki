@@ -5,104 +5,108 @@ comment: false
 # TypeScript
 
 ::: tip 简介
-TypeScript具有类型系统，且是JavaScript的超集， 它可以编译成普通的JavaScript代码。 
+TypeScript 具有类型系统，且是 JavaScript 的超集， 它可以编译成普通的 JavaScript 代码。
 
-TypeScript支持任意浏览器，任意环境，任意系统并且是开源的。
+TypeScript 支持任意浏览器，任意环境，任意系统并且是开源的。
 :::
 
-## 类型
+## 1、类型
 
-> typescript是一门静态强类型语言，支持更多ES6+新特性 也新增了许多类型
+> typescript 是一门静态强类型语言，支持更多 ES6+新特性 也新增了许多类型
 
 ![图片](./images/typescript-1.png)
 
-``` typescript
-let isDone: boolean = false;            //布尔值
+```typescript
+let isDone: boolean = false; //布尔值
 
-let decLiteral: number = 6;             //数字
+let decLiteral: number = 6; //数字
 
-let name: string = "bob";               //字符串
+let name: string = "bob"; //字符串
 
-let list: number[] = [1, 2, 3];         //数组
+let list: number[] = [1, 2, 3]; //数组
 
-let list: Array<number> = [1, 2, 3];    //泛型数组
+let list: Array<number> = [1, 2, 3]; //泛型数组
 
-let x: [string, number];                //元祖
-x = ['hello', 10]; // OK
-x = [10, 'hello']; // Error
+let x: [string, number]; //元祖
+x = ["hello", 10]; // OK
+x = [10, "hello"]; // Error
 
-enum Color {Red, Green, Blue}           //枚举
+enum Color {
+	Red,
+	Green,
+	Blue
+} //枚举
 let c: Color = Color.Green;
 
-let notSure: any = 4;                   //任意值
+let notSure: any = 4; //任意值
 
-function warnUser(): void {             //没有返回值值的函数
-    alert("This is my warning message");
+function warnUser(): void {
+	//没有返回值值的函数
+	alert("This is my warning message");
 }
 
-let u: undefined = undefined;           //undefined
+let u: undefined = undefined; //undefined
 
-let n: null = null;                     //null
+let n: null = null; //null
 
-function error(message: string): never {//抛出异常或死循环函数
-    throw new Error(message);
-    while (true) {
-    }
+function error(message: string): never {
+	//抛出异常或死循环函数
+	throw new Error(message);
+	while (true) {}
 }
 
-let someValue: any = "this is a string";//类型断言
+let someValue: any = "this is a string"; //类型断言
 let strLength: number = (someValue as string).length;
-
 ```
 
 ::: warning 提示
 一旦声明了类型则不能将其赋值给不属于此类型的类型
 :::
 
-## 接口
+## 2、接口
 
-``` typescript
+```typescript
 interface LabelledValue {
-  label: string;
-  width?: number;                                   //可选属性
-  color?: string;
-  readonly x: number;                               //只读属性 不可修改
-  [index: string]: number;                          //字符串索引签名
-  length: number;                                   // 可以，length是number类型
-  name: string                                      // 错误，`name`的类型与索引类型返回值的类型不匹配
-  (source: string, subString: string): boolean;     //函数类型
+	label: string;
+	width?: number; //可选属性
+	color?: string;
+	readonly x: number; //只读属性 不可修改
+	[index: string]: number; //字符串索引签名
+	length: number; // 可以，length是number类型
+	name: string; // 错误，`name`的类型与索引类型返回值的类型不匹配
+	(source: string, subString: string): boolean; //函数类型
 }
 
 function printLabel(labelledObj: LabelledValue) {
-  console.log(labelledObj);
+	console.log(labelledObj);
 }
 
 let myObj = {
-    size: 10, 
-    label: "Size 10 Object",
-    width:100,
-    x:10,
-    age:12,
+	size: 10,
+	label: "Size 10 Object",
+	width: 100,
+	x: 10,
+	age: 12
 };
 printLabel(myObj);
 ```
 
-## 函数
+## 3、函数
 
-``` typescript
+```typescript
 let myAdd: (x:number, y:number) => number = (x: number, y: number): number { return x + y; };   //完整函数类型
 
 function buildName(firstName = "Will", lastName: string,...restOfName: string[]) {                                      //可选参数、默认参数、剩余参数
     return firstName + " " + restOfName.join(" ");
 }
-let result4 = buildName("Tom",undefined, "Adams","Lucas", "MacKinzie");   
+let result4 = buildName("Tom",undefined, "Adams","Lucas", "MacKinzie");
 ```
 
-## 配置
+## 4、配置
 
->tsc --init  生成typescript配置文件
+> tsc --init 生成 typescript 配置文件
 
-``` typescript 
+```typescript
 {
   "compilerOptions": {
     "allowUnreachableCode": true, // 不报告执行不到的代码错误。
@@ -152,10 +156,11 @@ let result4 = buildName("Tom",undefined, "Adams","Lucas", "MacKinzie");
 }
 ```
 
-## 在vue项目中使用typescript
+## 5、在 vue 项目中使用 typescript
 
-1、安装ts插件
-``` typescript
+1、安装 ts 插件
+
+```typescript
 //安装vue的官方插件
 npm i vue-class-component vue-property-decorator --save
 
@@ -166,18 +171,18 @@ npm i ts-loader typescript tslint tslint-loader tslint-config-standard --save-de
 ::: tip 插件作用
 vue-class-component：强化 Vue 组件，使用 TypeScript/装饰器 增强 Vue 组件  
 vue-property-decorator：在 vue-class-component 上增强更多的结合 Vue 特性的装饰器  
-ts-loader：TypeScript 为 Webpack 提供了 ts-loader，其实就是为了让webpack识别 .ts .tsx文件  
-tslint-loader跟tslint：我想你也会在.ts .tsx文件 约束代码格式（作用等同于eslint）  
-tslint-config-standard：tslint 配置 standard风格的约束  
+ts-loader：TypeScript 为 Webpack 提供了 ts-loader，其实就是为了让 webpack 识别 .ts .tsx 文件  
+tslint-loader 跟 tslint：我想你也会在.ts .tsx 文件 约束代码格式（作用等同于 eslint）  
+tslint-config-standard：tslint 配置 standard 风格的约束  
 :::
 
-2、配置webpack（若使用vue-cli创建typescript可忽略此步骤）
+2、配置 webpack（若使用 vue-cli 创建 typescript 可忽略此步骤）
 
-``` typescript
-webpack.config.js      
+```typescript
+webpack.config.js
 
 //js统一转为ts
-entry: {                
+entry: {
   app: './src/main.ts'
 },
 //加上.ts文件后缀   引入文件可不写ts
@@ -205,74 +210,69 @@ module: {
   }
 }
 ```
+
 3、添加声明文件
 
->ts默认只识别*.ts文件，添加声明文件是让ts识别.vue
+> ts 默认只识别\*.ts 文件，添加声明文件是让 ts 识别.vue
 
-``` typescript
+```typescript
 declare module "*.vue" {
-  import Vue from "vue";
-  export default Vue;
+	import Vue from "vue";
+	export default Vue;
 }
 ```
 
-4、改造.vue文件
+4、改造.vue 文件
 
-1、script标签改为lang="ts"  
-2、mixins、components放入装饰器Component中，vue-class-component 对 Vue 组件进行了一层封装，让 Vue 组件语法在结合了 TypeScript 语法之后更加扁平化  
+1、script 标签改为 lang="ts"  
+2、mixins、components 放入装饰器 Component 中，vue-class-component 对 Vue 组件进行了一层封装，让 Vue 组件语法在结合了 TypeScript 语法之后更加扁平化  
 3、定义组件内的变量、方法直接写即可  
-4、计算属性computed改为 get  
-5、父子组件属性、监听器、vuex改为装饰器写法  
+4、计算属性 computed 改为 get  
+5、父子组件属性、监听器、vuex 改为装饰器写法
 
-``` vue
+```vue
 <template>
-  <div>
-    <input v-model="msg">
-    <p>msg: {{ msg }}</p>
-    <p>computed msg: {{ computedMsg }}</p>
-    <button @click="greet">Greet</button>
-  </div>
+	<div>
+		<input v-model="msg" />
+		<p>msg: {{ msg }}</p>
+		<p>computed msg: {{ computedMsg }}</p>
+		<button @click="greet">Greet</button>
+	</div>
 </template>
 
 <script lang="ts">
-  import Vue from 'vue'
-  import Component from 'vue-class-component'
+import Vue from "vue";
+import Component from "vue-class-component";
 
-  @Component({
-      mixins,
-      components
-  })
-  export default class App extends Vue {
-    //父子组件属性传值
-    @Prop()
-    propA: number = 1  
+@Component({
+	mixins,
+	components
+})
+export default class App extends Vue {
+	//父子组件属性传值
+	@Prop()
+	propA: number = 1;
 
-    // 初始化数据
-    msg = 123
+	// 初始化数据
+	msg = 123;
 
-    // 声明周期钩子
-    mounted () {
-      this.greet()
-    }
+	// 声明周期钩子
+	mounted() {
+		this.greet();
+	}
 
-    // 计算属性
-    get computedMsg () {
-      return 'computed ' + this.msg
-    }
+	// 计算属性
+	get computedMsg() {
+		return "computed " + this.msg;
+	}
 
-    //监听器
-    @Watch('child')
+	//监听器
+	@Watch("child")
 
-    // 方法
-    greet () {
-      alert('greeting: ' + this.msg)
-    }
-  }
+	// 方法
+	greet() {
+		alert("greeting: " + this.msg);
+	}
+}
 </script>
 ```
-
-
-
-
-
-
