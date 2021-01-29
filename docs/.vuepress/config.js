@@ -11,72 +11,73 @@ module.exports = {
             "link",
             {
                 rel: "icon",
-                href: "/profile.jpg"
-            }
+                href: "/profile.jpg",
+            },
         ],
         [
             "meta",
             {
                 name: "author",
-                content: "luyuwen"
-            }
+                content: "luyuwen",
+            },
         ],
         [
             "meta",
             {
                 name: "keywords",
-                content: "卢毓文的个人学习博客，一个兴趣使然的个人技术博客"
-            }
+                content: "卢毓文的个人学习博客，一个兴趣使然的个人技术博客",
+            },
         ],
         [
             "meta",
             {
                 name: "apple-mobile-web-app-capable",
-                content: "yes"
-            }
+                content: "yes",
+            },
         ],
         [
             "meta",
             {
                 name: "viewport",
-                content: "width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"
-            }
-        ]
+                content: "width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0",
+            },
+        ],
     ],
     configureWebpack: {
         resolve: {
             alias: {
-                "@": path.resolve(__dirname, "./")
-            }
-        }
+                "@": path.resolve(__dirname, "./"),
+            },
+        },
     },
     markdown: {
         lineNumbers: true,
         anchor: {
-            permalink: true
+            permalink: true,
         },
-        config: md => {
+        config: (md) => {
             md.set({
-                breaks: true
+                breaks: true,
             });
         },
         externalLinks: {
             target: "_blank",
-            rel: "noopener noreferrer"
-        }
+            rel: "noopener noreferrer",
+        },
     },
     themeConfig: {
         repo: "https://github.com/FizzSy/wiki.git",
         repoLabel: "GitHub",
         displayAllHeaders: true,
         //logo: "/logo.png",
-        nav: [{
+        nav: [
+            {
                 text: "首页",
-                link: "/"
+                link: "/",
             },
             {
                 text: "文档",
-                link: "/documents/"
+                link: "/documents/",
             },
             // {
             //     text: "文档",
@@ -92,32 +93,18 @@ module.exports = {
             // },
             {
                 text: "留言",
-                link: "/message/"
-            }
+                link: "/message/",
+            },
         ],
         sidebarDepth: 1,
         sidebar: {
-            "/documents/": [{
-                title: "文档",
-                collapsable: true,
-                children: [
-                    "",
-                    "webpack",
-                    "prerender",
-                    "nuxt",
-                    "typescript",
-                    "npm",
-                    "uni-app",
-                    "wepy",
-                    "jenkins",
-                    "nginx",
-                    "git",
-                    "markdown",
-                    "linux",
-                    "sass",
-                    "other"
-                ]
-            }],
+            "/documents/": [
+                {
+                    title: "文档",
+                    collapsable: true,
+                    children: ["", "webpack", "prerender", "nuxt", "typescript", "npm", "uni-app", "wepy", "jenkins", "docker", "nginx", "git", "markdown", "linux", "sass", "other"],
+                },
+            ],
             // "/prerender/": [{
             //     title: "预渲染",
             //     collapsable: true,
@@ -127,19 +114,22 @@ module.exports = {
             // }]
         },
         lastUpdated: "上一次更新时间：",
-        smoothScroll: true
+        smoothScroll: true,
     },
     plugins: [
         "@vuepress/active-header-links", //滚动条滚动左侧导航栏跟着滚动
         "vuepress-plugin-smooth-scroll",
         ["@vuepress/back-to-top", true], //回到顶部
-        ['@vuepress/medium-zoom', {
-            selector: 'img',
-            // See: https://github.com/francoischalifour/medium-zoom#options
-            options: {
-                margin: 16
-            }
-        }], //图片缩放
+        [
+            "@vuepress/medium-zoom",
+            {
+                selector: "img",
+                // See: https://github.com/francoischalifour/medium-zoom#options
+                options: {
+                    margin: 16,
+                },
+            },
+        ], //图片缩放
         ["vuepress-plugin-baidu-autopush"], //百度SEO推送
         //['vuepress-plugin-code-copy', true], //代码拷贝
         [
@@ -156,11 +146,11 @@ module.exports = {
                     notify: false,
                     verify: false,
                     pageSize: 10,
-                    language: "zh-cn"
-                }
-            }
-        ]
-    ]
+                    language: "zh-cn",
+                },
+            },
+        ],
+    ],
     //base:"/static/",                                  //静态资源路径
     //dest:path.resolve(__dirname,"./dist/static")      //将整个打包输出到指定文件夹 默认是  .vuepress/dist
 };

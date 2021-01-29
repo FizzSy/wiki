@@ -9,7 +9,7 @@ comment: false
 本质上，webpack 是一个现代 JavaScript 应用程序的静态模块打包器(module bundler)。当 webpack 处理应用程序时，它会递归地构建一个依赖关系图(dependency graph)，其中包含应用程序需要的每个模块，然后将所有这些模块打包成一个或多个 bundle。在 webpack 中，一切都是模块。
 :::
 
-## 1、什么是 webpack，为什么要使用它？
+## 1、什么是 webpack?
 
 现今的很多网页其实可以看做是功能丰富的应用，它们拥有着复杂的 JavaScript 代码和一大堆依赖包。为了简化开发的复杂度，前端社区涌现出了很多好的实践方法
 
@@ -51,14 +51,14 @@ webpack --config ./build/webpack.config.js
 ```js
 // webpack.config.js
 module.exports = {
-	//已多次提及的唯一入口文件
-	entry: __dirname + "/app/main.js",
-	//打包后的文件存放的地方
-	output: {
-		path: __dirname + "/public",
-		//打包后输出文件的文件名
-		filename: "bundle.js"
-	}
+    //已多次提及的唯一入口文件
+    entry: __dirname + "/app/main.js",
+    //打包后的文件存放的地方
+    output: {
+        path: __dirname + "/public",
+        //打包后输出文件的文件名
+        filename: "bundle.js",
+    },
 };
 ```
 
@@ -212,28 +212,28 @@ webpack.HotModuleReplacementPlugin();
 
 ```js
 module.exports = {
-	//...
-	optimization: {
-		splitChunks: {
-			chunks: "async",
-			minSize: 30000,
-			minChunks: 1,
-			maxAsyncRequests: 5,
-			maxInitialRequests: 3,
-			automaticNameDelimiter: "~",
-			name: true,
-			cacheGroups: {
-				vendors: {
-					test: /[\\/]node_modules[\\/]/,
-					priority: -10
-				},
-				default: {
-					minChunks: 2,
-					priority: -20,
-					reuseExistingChunk: true
-				}
-			}
-		}
-	}
+    //...
+    optimization: {
+        splitChunks: {
+            chunks: "async",
+            minSize: 30000,
+            minChunks: 1,
+            maxAsyncRequests: 5,
+            maxInitialRequests: 3,
+            automaticNameDelimiter: "~",
+            name: true,
+            cacheGroups: {
+                vendors: {
+                    test: /[\\/]node_modules[\\/]/,
+                    priority: -10,
+                },
+                default: {
+                    minChunks: 2,
+                    priority: -20,
+                    reuseExistingChunk: true,
+                },
+            },
+        },
+    },
 };
 ```
