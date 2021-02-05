@@ -102,7 +102,7 @@ module.exports = {
                 {
                     title: "文档",
                     collapsable: true,
-                    children: ["", "webpack", "prerender", "nuxt", "typescript", "npm", "uni-app", "wepy", "jenkins", "docker", "nginx", "git", "markdown", "linux", "sass", "other"],
+                    children: ["", "vue3", "webpack", "typescript", "nuxt", "uni-app", "wepy", "nginx", "jenkins", "docker", "npm", "git", "prerender", "markdown", "linux", "sass", "other"],
                 },
             ],
             // "/prerender/": [{
