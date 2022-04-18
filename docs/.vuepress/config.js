@@ -3,8 +3,7 @@ const path = require("path");
 module.exports = {
     title: "卢毓文的个人学习博客",
     port: "3000",
-    base: "/",
-    dest: "./wiki",
+    base: "/wiki/",
     description: "一个兴趣使然的个人技术博客",
     head: [
         [
